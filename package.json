@@ -10,6 +10,14 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1"
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^5.0.2",
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "vue": "^2.6.12"
   }
 }
