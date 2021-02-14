@@ -1,34 +1,94 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+const { VueLoaderPlugin } = require('vue-loader');
+const PrerenderSpaPlugin = require('prerender-spa-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.ts',
-  devtool: 'inline-source-map',
+  entry: './src/main.js',
   devServer: {
     contentBase: './dist',
+    open: true,
   },
-  plugins: [
-    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
-    new HtmlWebpackPlugin({
-      title: 'Development',
-    }),
-  ],
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   },
+  plugins: [
+    new VueLoaderPlugin(),
+    new PrerenderSpaPlugin(
+      Path.join(__dirname, 'dist'),
+      [
+        '/sample',
+      ],
+      {
+        postProcessHtml: context => {
+          return context.html;
+        }
+      }
+    ),
+  ],
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
+              sourceMap: enabledSourceMap,
+              minimize: true,
+              // 0 => no loaders (default);
+              // 1 => postcss-loader;
+              // 2 => postcss-loader, sass-loader;
+              importLoaders: 2
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              plugins: [
+                require('autoprefixer')({ grid: true })
+              ]
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: enabledSourceMap,
+            }
+          }
+        ]
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
       },
-    ],
-  },
+      {
+        test: /\.vue$/,
+        use: [
+          'vue-loader',
+        ]
+      },
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                '@babel/preset-env',
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
 };
