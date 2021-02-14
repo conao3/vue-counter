@@ -19,5 +19,8 @@
   },
   "dependencies": {
     "vue": "^2.6.12"
+  },
+  "babel": {
+    "presets": ["@babel/preset-env"]
   }
 }
