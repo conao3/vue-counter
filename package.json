@@ -1,0 +1,7 @@
+{
+  "name": "vue-counter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Naoya Yamashita <conao3@gmail.com>",
+  "license": "MIT"
+}
