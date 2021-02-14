@@ -1,5 +1,6 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -10,7 +11,11 @@ module.exports = {
     filename: 'app.js'
   },
   plugins: [
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Custom template',
+      template: './src/index.html',
+    })
   ],
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
