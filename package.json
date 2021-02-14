@@ -2,7 +2,6 @@
   "name": "vue-counter",
   "version": "1.0.0",
   "description": "[[https://github.com/conao3/vue-counter][https://raw.githubusercontent.com/conao3/files/master/blob/headers/png/vue-counter.png]] [[https://github.com/conao3/vue-counter/blob/master/LICENSE][https://img.shields.io/github/license/conao3/vue-counter.svg?style=flat-square]] [[https://github.com/conao3/vue-counter/releases][https://img.shields.io/github/tag/conao3/vue-counter.svg?style=flat-square]] [[https://github.com/conao3/vue-counter/actions][https://img.shields.io/badge/patreon-become%20a%20patron-orange.svg?logo=patreon&style=flat-square]] [[https://twitter.com/conao_3][https://img.shields.io/badge/twitter-@conao__3-blue.svg?logo=twitter&style=flat-square]] [[https://conao3-support.slack.com/join/shared_invite/enQtNjUzMDMxODcyMjE1LWUwMjhiNTU3Yjk3ODIwNzAxMTgwOTkxNmJiN2M4OTZkMWY0NjI4ZTg4MTVlNzcwNDY2ZjVjYmRiZmJjZDU4MDE][https://img.shields.io/badge/chat-on_slack-blue.svg?logo=slack&style=flat-square]]",
-  "main": "index.js",
   "keywords": [],
   "author": "",
   "license": "MIT",
