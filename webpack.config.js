@@ -11,6 +11,12 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin()
   ],
+  devServer: {
+    contentBase: __dirname + '/dist',
+    publicPath: '/',
+    inline: true,
+    hot: true,
+  },
   module: {
     rules: [
       {
