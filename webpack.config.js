@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: 'js/app.js'
+    filename: 'app.js'
   },
   plugins: [
     new VueLoaderPlugin()
