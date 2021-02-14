@@ -1,10 +1,11 @@
+const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   mode: 'development',
   entry: './src/assets/js/app.js',
   output: {
-    path: __dirname + '/dist',
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     filename: 'js/app.js'
   },
@@ -12,7 +13,7 @@ module.exports = {
     new VueLoaderPlugin()
   ],
   devServer: {
-    contentBase: __dirname + '/dist',
+    contentBase: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     inline: true,
     hot: true,
