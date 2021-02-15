@@ -13,8 +13,13 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Custom template',
-      template: './src/index.html',
+      inject: false,
+      template: require('html-webpack-template'),
+
+      title: 'Vue counter',
+      appMountId: 'app',
+      devServer: 'http://localhost:3001',
+      scripts: ['/app.js'],
     })
   ],
   devServer: {
@@ -22,6 +27,7 @@ module.exports = {
     publicPath: '/',
     inline: true,
     hot: true,
+    port: 3001,
   },
   module: {
     rules: [
