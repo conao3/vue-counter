@@ -21,7 +21,7 @@
 * Description
 Todo sample app using vue.js.
 
-[[./imagesss1.png]]
+[[./images/ss1.png]]
 
 * Usage
 #+begin_src sh
